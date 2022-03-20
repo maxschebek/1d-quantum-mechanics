@@ -44,10 +44,10 @@ class Hamiltonian:
         eigvals_scatter = np.delete(self.eigvals,np.where(self.eigvals<0))
         eigvecs_scatter=np.delete(self.eigvecs,np.where(self.eigvals<0),axis=1)
 
-        #Sort by parity
+        #Sort wavefunctions by parity
         eigvecs_rev = eigvecs_scatter[::-1]
         ids_neg = np.where(np.all(np.isclose(eigvecs_rev, -eigvecs_scatter, atol=1e-5), axis=0))[0]
-        ids_pos = np.where(np.all(np.isclose(eigvecs_rev, eigvecs_scatter, atol=1e-5), axis=0))[0]  # bestimme Indices von WFs positiver Parität
+        ids_pos = np.where(np.all(np.isclose(eigvecs_rev, eigvecs_scatter, atol=1e-5), axis=0))[0] 
 
         if len(ids_neg) + len(ids_pos) != len(self.eigvals):
             print('missing wave function')

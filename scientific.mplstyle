@@ -1,0 +1,31 @@
+axes.labelsize : 16
+axes.titlesize : 16
+lines.linewidth : 1.5
+lines.markersize : 16
+xtick.labelsize : 16
+ytick.labelsize : 16
+axes.linewidth: 1.5
+
+
+# Tick properties
+# x-axis
+xtick.top: True
+xtick.direction: in
+xtick.major.width: 1.5
+xtick.major.size: 7
+xtick.major.pad: 5
+
+
+# y-axis
+ytick.right: True
+ytick.direction: in
+ytick.major.width: 1.5
+ytick.major.size: 7
+ytick.major.pad: 5
+
+
+
+# Legend properties
+legend.framealpha: 1
+legend.frameon: False
+legend.fontsize: 16
