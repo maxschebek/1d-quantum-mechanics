@@ -13,14 +13,14 @@ class Hamiltonian:
         self.length = length
         self.stepsize = length / n_steps
         self.m = (n_steps - 1) / 2
+        self.x_values = self.stepsize * np.linspace(-self.m, self.m, self.n_steps)
+        self.build_kinetic_hamiltonian()
 
     def build_hamiltonian(self, potential_func):
         self.build_potential_hamiltonian(potential_func)
-        self.build_kinetic_hamiltonian()
         self.hamiltonian = self.hamilton_kinetic + self.hamilton_potential
 
     def build_potential_hamiltonian(self, V_func):
-        self.x_values = self.stepsize * np.linspace(-self.m, self.m, self.n_steps)
         self.hamilton_potential = np.diag(V_func(self.x_values))
 
     def build_kinetic_hamiltonian(self):
